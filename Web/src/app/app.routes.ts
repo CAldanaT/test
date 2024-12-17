@@ -1,16 +1,12 @@
 import { Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { AuthComponent } from './auth/auth.component';
-import { LoginComponent } from './auth/login/login.component';
+import { RegistroComponent } from './auth/registro/registro.component';
 
 export const routes: Routes = [
     {
         path:'',
-        loadComponent: () => import('./auth/auth.component').then(c => c.AuthComponent)
+        loadComponent: () => import('./auth/registro/registro.component').then(c => c.RegistroComponent)
     },
-    { 
-        path: 'login', 
-        component: LoginComponent },
     {
         path: '',
         redirectTo: '',

@@ -1,0 +1,33 @@
+        .header-green {
+            background: linear-gradient(to bottom, #3ee736, #23c723);
+            color: white;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            font-size: 2rem;
+            text-align: left;
+            padding: 20px 30px;
+            position: relative;
+        }
+
+        .leaf-icon {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 4rem;
+            color: #2d7c2d;
+        }
+
+        .form-container {
+            margin-top: 30px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .powered-by {
+            font-size: 0.8rem;
+            text-align: right;
+            color: gray;
+        }
