@@ -13,6 +13,8 @@ namespace Api
     {
         public static void Main(string[] args)
         {
+            System.Net.ServicePointManager.SecurityProtocol = System.Net.SecurityProtocolType.Tls12;
+
             CreateHostBuilder(args).Build().Run();
         }
 

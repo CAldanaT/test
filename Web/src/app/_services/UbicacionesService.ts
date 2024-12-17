@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { URL_API } from '../config/config';
 
@@ -12,6 +12,7 @@ export class UbicacionesService {
   constructor(private http: HttpClient) {}
 
   buscarUbicaciones(termino: string): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/buscar?termino=${termino}`);
+    let params = new HttpParams().set('termino', termino);
+    return this.http.get<any[]>(this.apiUrl+"/buscar", {params: params});
   }
 }

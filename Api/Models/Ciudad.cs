@@ -5,6 +5,11 @@ using System.Threading.Tasks;
 
 namespace Api.Models
 {
+    public class GeonamesResponse
+    {
+        public List<Ciudad> Geonames { get; set; }
+    }
+
     public class Ciudad
     {
         public string NombreLargo { get; set; }

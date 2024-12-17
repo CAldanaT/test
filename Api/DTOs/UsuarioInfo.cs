@@ -23,6 +23,7 @@ namespace Api.DTOs
 
         [Required(ErrorMessage = "La fecha es obligatoria.")]
         [DataType(DataType.Date, ErrorMessage = "La fecha no es válida.")]
+        [FechaValidador]
         public DateTime Fecha { get; set; }
     }
 }

@@ -21,7 +21,12 @@ namespace Api.Controllers
 
         public UbicacionesController(IHttpClientFactory httpClientFactory, IConfiguration configuration)
         {
-            _httpClient = httpClientFactory.CreateClient();
+            var handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (message, cert, chain, sslPolicyErrors) => true
+            };
+
+            _httpClient = new HttpClient(handler);
 
             _geonamesApiUrl = configuration["GeonamesApi:Url"];
             _geonamesUsername = configuration["GeonamesApi:Username"];
@@ -36,17 +41,21 @@ namespace Api.Controllers
             }
 
             var url = $"{_geonamesApiUrl}?q={termino}&maxRows=10&username={_geonamesUsername}";
+
             var response = await _httpClient.GetAsync(url);
+            response.EnsureSuccessStatusCode();
+            var content = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(content);
 
             if (!response.IsSuccessStatusCode)
             {
                 return StatusCode((int)response.StatusCode, "Error al obtener datos de Geonames API.");
             }
 
-            var contenido = await response.Content.ReadAsStringAsync();
-            var resultado = JsonConvert.DeserializeObject<List<Ciudad>>(contenido);
+            var json = await response.Content.ReadAsStringAsync();
+            var resultado = JsonConvert.DeserializeObject<GeonamesResponse>(json);
 
-            var ciudades = resultado.Select(c => new
+            var ciudades = resultado.Geonames.Select(c => new
             {
                 NombreLargo = c.Name + ", " + c.AdminName1 + ", " + c.CountryName,
                 Nombre = c.Name,
@@ -55,6 +64,7 @@ namespace Api.Controllers
             }).ToList();
 
             return Ok(ciudades);
+
         }
     }
 }
