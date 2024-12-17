@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <PackageJsonName Condition="$(PackageJsonName) == ''">proforecast.client.new-web-ng-m</PackageJsonName>
+    <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">0.0.0</PackageJsonVersion>
+    <PackageJsonScriptsNg Condition="$(PackageJsonScriptsNg) == ''">ng</PackageJsonScriptsNg>
+    <PackageJsonScriptsStart Condition="$(PackageJsonScriptsStart) == ''">ng serve</PackageJsonScriptsStart>
+    <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">ng build</PackageJsonScriptsBuild>
+    <PackageJsonScriptsWatch Condition="$(PackageJsonScriptsWatch) == ''">ng build --watch --configuration development</PackageJsonScriptsWatch>
+    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">ng test</PackageJsonScriptsTest>
+    <PackageJsonScriptsServeSsrProforecastClientNewWebNgM Condition="$(PackageJsonScriptsServeSsrProforecastClientNewWebNgM) == ''">node dist/proforecast.client.new-web-ngmv2/server/server.mjs</PackageJsonScriptsServeSsrProforecastClientNewWebNgM>
+    <PackageJsonPrivate Condition="$(PackageJsonPrivate) == ''">true</PackageJsonPrivate>
+    <PackageJsonDependenciesAgmCore Condition="$(PackageJsonDependenciesAgmCore) == ''">^3.0.0-beta.0</PackageJsonDependenciesAgmCore>
+    <PackageJsonDependenciesAngularAnimations Condition="$(PackageJsonDependenciesAngularAnimations) == ''">^18.0.0</PackageJsonDependenciesAngularAnimations>
+    <PackageJsonDependenciesAngularCommon Condition="$(PackageJsonDependenciesAngularCommon) == ''">^18.0.0</PackageJsonDependenciesAngularCommon>
+    <PackageJsonDependenciesAngularCompiler Condition="$(PackageJsonDependenciesAngularCompiler) == ''">^18.0.0</PackageJsonDependenciesAngularCompiler>
+    <PackageJsonDependenciesAngularCore Condition="$(PackageJsonDependenciesAngularCore) == ''">^18.0.0</PackageJsonDependenciesAngularCore>
+    <PackageJsonDependenciesAngularForms Condition="$(PackageJsonDependenciesAngularForms) == ''">^18.0.0</PackageJsonDependenciesAngularForms>
+    <PackageJsonDependenciesAngularPlatformBrowser Condition="$(PackageJsonDependenciesAngularPlatformBrowser) == ''">^18.0.0</PackageJsonDependenciesAngularPlatformBrowser>
+    <PackageJsonDependenciesAngularPlatformBrowserDynamic Condition="$(PackageJsonDependenciesAngularPlatformBrowserDynamic) == ''">^18.0.0</PackageJsonDependenciesAngularPlatformBrowserDynamic>
+    <PackageJsonDependenciesAngularPlatformServer Condition="$(PackageJsonDependenciesAngularPlatformServer) == ''">^18.0.0</PackageJsonDependenciesAngularPlatformServer>
+    <PackageJsonDependenciesAngularRouter Condition="$(PackageJsonDependenciesAngularRouter) == ''">^18.0.0</PackageJsonDependenciesAngularRouter>
+    <PackageJsonDependenciesAngularSsr Condition="$(PackageJsonDependenciesAngularSsr) == ''">^18.0.5</PackageJsonDependenciesAngularSsr>
+    <PackageJsonDependenciesCirclonAngularTreeComponent Condition="$(PackageJsonDependenciesCirclonAngularTreeComponent) == ''">^11.0.4</PackageJsonDependenciesCirclonAngularTreeComponent>
+    <PackageJsonDependenciesFortawesomeFontawesomeFree Condition="$(PackageJsonDependenciesFortawesomeFontawesomeFree) == ''">^6.6.0</PackageJsonDependenciesFortawesomeFontawesomeFree>
+    <PackageJsonDependenciesFullcalendarAngular Condition="$(PackageJsonDependenciesFullcalendarAngular) == ''">^6.1.15</PackageJsonDependenciesFullcalendarAngular>
+    <PackageJsonDependenciesFullcalendarBootstrap Condition="$(PackageJsonDependenciesFullcalendarBootstrap) == ''">^6.1.15</PackageJsonDependenciesFullcalendarBootstrap>
+    <PackageJsonDependenciesFullcalendarCore Condition="$(PackageJsonDependenciesFullcalendarCore) == ''">^6.1.15</PackageJsonDependenciesFullcalendarCore>
+    <PackageJsonDependenciesFullcalendarDaygrid Condition="$(PackageJsonDependenciesFullcalendarDaygrid) == ''">^6.1.15</PackageJsonDependenciesFullcalendarDaygrid>
+    <PackageJsonDependenciesFullcalendarInteraction Condition="$(PackageJsonDependenciesFullcalendarInteraction) == ''">^6.1.15</PackageJsonDependenciesFullcalendarInteraction>
+    <PackageJsonDependenciesFullcalendarList Condition="$(PackageJsonDependenciesFullcalendarList) == ''">^6.1.15</PackageJsonDependenciesFullcalendarList>
+    <PackageJsonDependenciesFullcalendarTimegrid Condition="$(PackageJsonDependenciesFullcalendarTimegrid) == ''">^6.1.15</PackageJsonDependenciesFullcalendarTimegrid>
+    <PackageJsonDependenciesNgxTranslateCore Condition="$(PackageJsonDependenciesNgxTranslateCore) == ''">^15.0.0</PackageJsonDependenciesNgxTranslateCore>
+    <PackageJsonDependenciesNgxTranslateHttpLoader Condition="$(PackageJsonDependenciesNgxTranslateHttpLoader) == ''">^8.0.0</PackageJsonDependenciesNgxTranslateHttpLoader>
+    <PackageJsonDependenciesSwimlaneNgxDatatable Condition="$(PackageJsonDependenciesSwimlaneNgxDatatable) == ''">^20.1.0</PackageJsonDependenciesSwimlaneNgxDatatable>
+    <PackageJsonDependenciesAgGridAngular Condition="$(PackageJsonDependenciesAgGridAngular) == ''">^32.0.2</PackageJsonDependenciesAgGridAngular>
+    <PackageJsonDependenciesAgGridCommunity Condition="$(PackageJsonDependenciesAgGridCommunity) == ''">^32.0.2</PackageJsonDependenciesAgGridCommunity>
+    <PackageJsonDependenciesAngularImask Condition="$(PackageJsonDependenciesAngularImask) == ''">^7.6.1</PackageJsonDependenciesAngularImask>
+    <PackageJsonDependenciesBootstrap Condition="$(PackageJsonDependenciesBootstrap) == ''">^5.3.3</PackageJsonDependenciesBootstrap>
+    <PackageJsonDependenciesChartJs Condition="$(PackageJsonDependenciesChartJs) == ''">^4.4.3</PackageJsonDependenciesChartJs>
+    <PackageJsonDependenciesClasslistJs Condition="$(PackageJsonDependenciesClasslistJs) == ''">^1.1.20150312</PackageJsonDependenciesClasslistJs>
+    <PackageJsonDependenciesCodemirror Condition="$(PackageJsonDependenciesCodemirror) == ''">^6.0.1</PackageJsonDependenciesCodemirror>
+    <PackageJsonDependenciesCoreJs Condition="$(PackageJsonDependenciesCoreJs) == ''">^3.37.1</PackageJsonDependenciesCoreJs>
+    <PackageJsonDependenciesEasyPieChart Condition="$(PackageJsonDependenciesEasyPieChart) == ''">^2.1.7</PackageJsonDependenciesEasyPieChart>
+    <PackageJsonDependenciesEnhancedResolve Condition="$(PackageJsonDependenciesEnhancedResolve) == ''">^5.17.0</PackageJsonDependenciesEnhancedResolve>
+    <PackageJsonDependenciesExpress Condition="$(PackageJsonDependenciesExpress) == ''">^4.18.2</PackageJsonDependenciesExpress>
+    <PackageJsonDependenciesFlot Condition="$(PackageJsonDependenciesFlot) == ''">^4.2.6</PackageJsonDependenciesFlot>
+    <PackageJsonDependenciesIkaJvectormap Condition="$(PackageJsonDependenciesIkaJvectormap) == ''">github:themicon/ika.jvectormap</PackageJsonDependenciesIkaJvectormap>
+    <PackageJsonDependenciesIntl Condition="$(PackageJsonDependenciesIntl) == ''">^1.2.5</PackageJsonDependenciesIntl>
+    <PackageJsonDependenciesJestEditorSupport Condition="$(PackageJsonDependenciesJestEditorSupport) == ''">*</PackageJsonDependenciesJestEditorSupport>
+    <PackageJsonDependenciesJqcloud2 Condition="$(PackageJsonDependenciesJqcloud2) == ''">^2.0.3</PackageJsonDependenciesJqcloud2>
+    <PackageJsonDependenciesJquery Condition="$(PackageJsonDependenciesJquery) == ''">^3.7.1</PackageJsonDependenciesJquery>
+    <PackageJsonDependenciesJquerySlimscroll Condition="$(PackageJsonDependenciesJquerySlimscroll) == ''">^1.3.8</PackageJsonDependenciesJquerySlimscroll>
+    <PackageJsonDependenciesJquerySparkline Condition="$(PackageJsonDependenciesJquerySparkline) == ''">^2.4.0</PackageJsonDependenciesJquerySparkline>
+    <PackageJsonDependenciesJqueryBrowser Condition="$(PackageJsonDependenciesJqueryBrowser) == ''">^0.1.0</PackageJsonDependenciesJqueryBrowser>
+    <PackageJsonDependenciesJqueryFlotSpline Condition="$(PackageJsonDependenciesJqueryFlotSpline) == ''">github:themicon/jquery.flot.spline</PackageJsonDependenciesJqueryFlotSpline>
+    <PackageJsonDependenciesJqueryFlotTooltip Condition="$(PackageJsonDependenciesJqueryFlotTooltip) == ''">github:krzysu/flot.tooltip</PackageJsonDependenciesJqueryFlotTooltip>
+    <PackageJsonDependenciesLodash Condition="$(PackageJsonDependenciesLodash) == ''">^4.17.21</PackageJsonDependenciesLodash>
+    <PackageJsonDependenciesModernizr Condition="$(PackageJsonDependenciesModernizr) == ''">^3.13.0</PackageJsonDependenciesModernizr>
+    <PackageJsonDependenciesMoment Condition="$(PackageJsonDependenciesMoment) == ''">^2.30.1</PackageJsonDependenciesMoment>
+    <PackageJsonDependenciesNg2Charts Condition="$(PackageJsonDependenciesNg2Charts) == ''">^6.0.1</PackageJsonDependenciesNg2Charts>
+    <PackageJsonDependenciesNg2Dnd Condition="$(PackageJsonDependenciesNg2Dnd) == ''">^9.0.0-beta2</PackageJsonDependenciesNg2Dnd>
+    <PackageJsonDependenciesNg2FileUpload Condition="$(PackageJsonDependenciesNg2FileUpload) == ''">^7.0.0</PackageJsonDependenciesNg2FileUpload>
+    <PackageJsonDependenciesNgxBootstrap Condition="$(PackageJsonDependenciesNgxBootstrap) == ''">^18.0.2</PackageJsonDependenciesNgxBootstrap>
+    <PackageJsonDependenciesNgxColorPicker Condition="$(PackageJsonDependenciesNgxColorPicker) == ''">^17.0.0</PackageJsonDependenciesNgxColorPicker>
+    <PackageJsonDependenciesNgxCustomValidators Condition="$(PackageJsonDependenciesNgxCustomValidators) == ''">^11.0.1</PackageJsonDependenciesNgxCustomValidators>
+    <PackageJsonDependenciesNgxImgCropper Condition="$(PackageJsonDependenciesNgxImgCropper) == ''">^14.0.1</PackageJsonDependenciesNgxImgCropper>
+    <PackageJsonDependenciesNgxInfiniteScroll Condition="$(PackageJsonDependenciesNgxInfiniteScroll) == ''">^18.0.0</PackageJsonDependenciesNgxInfiniteScroll>
+    <PackageJsonDependenciesNgxSelectEx Condition="$(PackageJsonDependenciesNgxSelectEx) == ''">^8.0.1</PackageJsonDependenciesNgxSelectEx>
+    <PackageJsonDependenciesNgxSummernote Condition="$(PackageJsonDependenciesNgxSummernote) == ''">^1.0.0</PackageJsonDependenciesNgxSummernote>
+    <PackageJsonDependenciesNgxToastr Condition="$(PackageJsonDependenciesNgxToastr) == ''">^19.0.0</PackageJsonDependenciesNgxToastr>
+    <PackageJsonDependenciesPopperJs Condition="$(PackageJsonDependenciesPopperJs) == ''">^1.16.1</PackageJsonDependenciesPopperJs>
+    <PackageJsonDependenciesRxjs Condition="$(PackageJsonDependenciesRxjs) == ''">~7.8.0</PackageJsonDependenciesRxjs>
+    <PackageJsonDependenciesRxjsCompat Condition="$(PackageJsonDependenciesRxjsCompat) == ''">^6.6.7</PackageJsonDependenciesRxjsCompat>
+    <PackageJsonDependenciesScreenfull Condition="$(PackageJsonDependenciesScreenfull) == ''">^6.0.2</PackageJsonDependenciesScreenfull>
+    <PackageJsonDependenciesSimpleLineIcons Condition="$(PackageJsonDependenciesSimpleLineIcons) == ''">^2.5.5</PackageJsonDependenciesSimpleLineIcons>
+    <PackageJsonDependenciesSourceSansPro Condition="$(PackageJsonDependenciesSourceSansPro) == ''">^3.6.0</PackageJsonDependenciesSourceSansPro>
+    <PackageJsonDependenciesSpinkit Condition="$(PackageJsonDependenciesSpinkit) == ''">^2.0.1</PackageJsonDependenciesSpinkit>
+    <PackageJsonDependenciesSweetalert2 Condition="$(PackageJsonDependenciesSweetalert2) == ''">^11.6.13</PackageJsonDependenciesSweetalert2>
+    <PackageJsonDependenciesTsHelpers Condition="$(PackageJsonDependenciesTsHelpers) == ''">^1.1.2</PackageJsonDependenciesTsHelpers>
+    <PackageJsonDependenciesTslib Condition="$(PackageJsonDependenciesTslib) == ''">^2.6.3</PackageJsonDependenciesTslib>
+    <PackageJsonDependenciesWeatherIcons Condition="$(PackageJsonDependenciesWeatherIcons) == ''">github:erikflowers/weather-icons</PackageJsonDependenciesWeatherIcons>
+    <PackageJsonDependenciesWebAnimationsJs Condition="$(PackageJsonDependenciesWebAnimationsJs) == ''">^2.3.2</PackageJsonDependenciesWebAnimationsJs>
+    <PackageJsonDependenciesZoneJs Condition="$(PackageJsonDependenciesZoneJs) == ''">^0.14.7</PackageJsonDependenciesZoneJs>
+    <PackageJsonDevdependenciesAngularDevkitBuildAngular Condition="$(PackageJsonDevdependenciesAngularDevkitBuildAngular) == ''">^18.0.5</PackageJsonDevdependenciesAngularDevkitBuildAngular>
+    <PackageJsonDevdependenciesAngularCli Condition="$(PackageJsonDevdependenciesAngularCli) == ''">^18.0.5</PackageJsonDevdependenciesAngularCli>
+    <PackageJsonDevdependenciesAngularCompilerCli Condition="$(PackageJsonDevdependenciesAngularCompilerCli) == ''">^18.0.0</PackageJsonDevdependenciesAngularCompilerCli>
+    <PackageJsonDevdependenciesTypesExpress Condition="$(PackageJsonDevdependenciesTypesExpress) == ''">^4.17.17</PackageJsonDevdependenciesTypesExpress>
+    <PackageJsonDevdependenciesTypesJasmine Condition="$(PackageJsonDevdependenciesTypesJasmine) == ''">~5.1.0</PackageJsonDevdependenciesTypesJasmine>
+    <PackageJsonDevdependenciesTypesNode Condition="$(PackageJsonDevdependenciesTypesNode) == ''">^18.18.0</PackageJsonDevdependenciesTypesNode>
+    <PackageJsonDevdependenciesJasmineCore Condition="$(PackageJsonDevdependenciesJasmineCore) == ''">~5.1.0</PackageJsonDevdependenciesJasmineCore>
+    <PackageJsonDevdependenciesKarma Condition="$(PackageJsonDevdependenciesKarma) == ''">~6.4.0</PackageJsonDevdependenciesKarma>
+    <PackageJsonDevdependenciesKarmaChromeLauncher Condition="$(PackageJsonDevdependenciesKarmaChromeLauncher) == ''">~3.2.0</PackageJsonDevdependenciesKarmaChromeLauncher>
+    <PackageJsonDevdependenciesKarmaCoverage Condition="$(PackageJsonDevdependenciesKarmaCoverage) == ''">~2.2.0</PackageJsonDevdependenciesKarmaCoverage>
+    <PackageJsonDevdependenciesKarmaJasmine Condition="$(PackageJsonDevdependenciesKarmaJasmine) == ''">~5.1.0</PackageJsonDevdependenciesKarmaJasmine>
+    <PackageJsonDevdependenciesKarmaJasmineHtmlReporter Condition="$(PackageJsonDevdependenciesKarmaJasmineHtmlReporter) == ''">~2.1.0</PackageJsonDevdependenciesKarmaJasmineHtmlReporter>
+    <PackageJsonDevdependenciesTypescript Condition="$(PackageJsonDevdependenciesTypescript) == ''">~5.4.2</PackageJsonDevdependenciesTypescript>
+  </PropertyGroup>
+</Project>
