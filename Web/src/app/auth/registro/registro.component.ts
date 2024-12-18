@@ -18,6 +18,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ErrorDialogComponent } from './error.dialog.componnet';
 import { fechaValidator } from './validators/fechaValidator';
 import { UbicacionesService } from '../../_services/UbicacionesService';
+import { Ciudad } from '../../_modules/Ciudad.model';
+import { Usuario } from '../../_modules/Usuario.model';
+import { UsuariosService } from '../../_services/UsuariosService';
 
 @Component({
   selector: 'app-registro',
@@ -46,18 +49,11 @@ export class RegistroComponent implements OnInit, OnDestroy {
    returnUrl: string | undefined;
    private unsubscribe: Subscription[] = [];
     selectedCity: any;
-    ciudades: [];
-    cityControl: FormControl<any>;
-    filteredCities: any[] = []
-    ciudad: any;
+    ciudades: Ciudad[] = [];
 
-  constructor(public settings:SettingsService, private fb: FormBuilder, private toaster: ToastrService, private route: ActivatedRoute, private router: Router, private dialog: MatDialog, private ubicacionesService: UbicacionesService){
+  constructor(public settings:SettingsService, private fb: FormBuilder, private toaster: ToastrService, private route: ActivatedRoute, private router: Router, private dialog: MatDialog, private ubicacionesService: UbicacionesService, private usuarioService: UsuariosService){
     this.registroForm = FormGroup<any>; 
     this.isLoading$ = Observable<boolean>;
-    /*this.isLoading$ = this.authService.isLoading$;
-     if(this.authService.isLogued()){
-       this.router.navigate(['/app.plans']);
-    }*/
   }
 
   ngOnDestroy(): void {
@@ -135,12 +131,42 @@ export class RegistroComponent implements OnInit, OnDestroy {
   get fecha() {
     return this.registroForm.get('fecha');
   }
+
+  get ciudad() {
+    return this.registroForm.get('ciudad');
+  }
   
   registrarUsuario($event: any, value: any){
     if(this.registroForm.invalid){
         this.openErrorDialog();
     } else {
-      console.log("Formulario Valido...");
+      const usuario: Usuario = this.registroForm.value;
+
+      const ciudadnombre = this.registroForm.value.ciudad;
+
+      if(ciudadnombre){
+        const ciudadesFiltradas  = this.ciudades.filter(ciudad =>
+          ciudad.nombreLargo.toLowerCase().includes(ciudadnombre.toLowerCase())
+        );
+
+        if (ciudadesFiltradas.length > 0) {
+          const ciudadSeleccionada = ciudadesFiltradas[0]; 
+
+          usuario.ciudad = ciudadSeleccionada.nombre;
+          usuario.estado = ciudadSeleccionada.estaado;
+          usuario.pais = ciudadSeleccionada.pais;
+        }
+      }
+
+      this.usuarioService.nuevoUsuario(usuario).subscribe(
+        response => {
+          alert('Usuario creado exitosamente');
+          this.sendConfirmationEmail(response.email);
+        },
+        error => {
+          alert('Error al guardar datos del usuario');
+        }
+      );
     }
   }
   
@@ -155,13 +181,25 @@ export class RegistroComponent implements OnInit, OnDestroy {
 
   buscarCiudad(query: string): void {
     if (query.length >= 3) {
-      this.ubicacionesService.buscarUbicaciones(query).subscribe(
-        (response) => {
-          console.log(response);
+      this.ubicacionesService.buscarUbicaciones(query).subscribe({
+        next: (data) => {
+          this.ciudades = data;
         },
-        (error) => {
-          console.error('Error al obtener las ciudades:', error);
+        error: (err) => {
+          alert('Error al obtener ciudades');
+        },
       });
     }
+  }
+
+  sendConfirmationEmail(usuario: Usuario): void {
+    this.usuarioService.sendConfirmationEmail(usuario).subscribe(
+      response => {
+        alert('Correo de confirmación enviado');
+      },
+      error => {
+        alert('Error al enviar el correo');
+      }
+    );
   }
 }

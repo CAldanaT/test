@@ -10,7 +10,7 @@ namespace Api.DTOs
     {
         public Guid? Id { get; set; }
         [Required(ErrorMessage = "El nombre es obligatorio.")]
-        [StringLength(100, ErrorMessage = "El nombre no puede exceder los 100 caracteres.")]
+        [StringLength(250, ErrorMessage = "El nombre no puede exceder los 250 caracteres.")]
         public string Nombre { get; set; }
 
         [Required(ErrorMessage = "El email es obligatorio.")]
@@ -25,5 +25,17 @@ namespace Api.DTOs
         [DataType(DataType.Date, ErrorMessage = "La fecha no es válida.")]
         [FechaValidador]
         public DateTime Fecha { get; set; }
+
+        [Required(ErrorMessage = "La ciudad es obligatorio.")]
+        [StringLength(250, ErrorMessage = "La ciudad no puede exceder los 250 caracteres.")]
+        public string Ciudad { get; set; }
+
+        [Required(ErrorMessage = "El estado es obligatorio.")]
+        [StringLength(250, ErrorMessage = "El estado no puede exceder los 250 caracteres.")]
+        public string Estado { get; set; }
+
+        [Required(ErrorMessage = "El pais es obligatorio.")]
+        [StringLength(250, ErrorMessage = "El pais no puede exceder los 250 caracteres.")]
+        public string Pais { get; set; }
     }
 }

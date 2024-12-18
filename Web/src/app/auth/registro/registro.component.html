@@ -49,9 +49,10 @@
                     <label for="ciudad" class="col-sm-2 col-form-label">Ciudad & Estado:</label>
                     <div class="col-sm-10">
                         <mat-form-field appearance="outline" class="w-100">
-                            <input matInput [formControl]="registroForm.ciudad" [matAutocomplete]="auto" name="ciudad" formControlName="ciudad" [(ngModel)]="ciudad" (input)="buscarCiudad(ciudad)">
+                            <input matInput [matAutocomplete]="auto" name="ciudad" formControlName="ciudad" [(ngModel)]="registroForm.ciudad" (input)="buscarCiudad(registroForm.ciudad)">
                             <mat-autocomplete #auto="matAutocomplete">
-                              <mat-option [value]="">
+                              <mat-option *ngFor="let city of ciudades" [value]="city.nombreLargo">
+                                {{ city.nombreLargo }}
                               </mat-option>
                             </mat-autocomplete>
                         </mat-form-field>
@@ -61,9 +62,5 @@
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
             </form>
-
-            <!-- <div class="powered-by mt-3">
-                Powered by <a href="#" class="text-info">GeoNames.org</a>
-            </div> -->
         </div>
     </div>

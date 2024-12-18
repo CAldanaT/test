@@ -2,6 +2,7 @@
 using Api.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,14 @@ namespace Api.Controllers
         public UsuariosController(pruebaContext pruebaContext)
         {
             this.pruebaContext = pruebaContext;
+
         }
 
         [HttpPost]
         [Route("PostUsuario")]
         public async Task<HttpStatusCode> PostUsuario(UsuarioInfo item)
         {
-            if(item == null)
+            if (item == null)
                 BadRequest("No hay datos para guardar");
 
             if (ValidateUsusario(item.Email))
@@ -37,7 +39,10 @@ namespace Api.Controllers
                 Nombre = item.Nombre,
                 Email = item.Email,
                 Telefono = item.Telefono,
-                Fecha = item.Fecha
+                Fecha = item.Fecha,
+                Ciudad = item.Ciudad,
+                Estado = item.Estado,
+                Pais = item.Pais
             };
 
             pruebaContext.Usuarios.Add(newItem);

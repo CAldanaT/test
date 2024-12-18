@@ -9,10 +9,14 @@ namespace Api.Entities
 {
     public partial class Usuarios
     {
-        public Guid Id { get; set; }
+        public Guid? Id { get; set; }
         public string Nombre { get; set; }
         public string Email { get; set; }
         public string Telefono { get; set; }
         public DateTime Fecha { get; set; }
+        public string Ciudad { get; set; }
+        public string Estado { get; set; }
+        public string Pais { get; set; }
+
     }
 }

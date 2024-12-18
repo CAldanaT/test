@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
         CommonModule
     ],
     template: `
-      <h2 mat-dialog-title>Errores de validación</h2>
+      <h2 mat-dialog-title>Se encontraron los siguientes errores en sus datos de contacto</h2>
       <mat-dialog-content>
         <div *ngIf="errors?.['nombre']?.['errors']?.['required']">
           <p>El nombre es obligatorio.</p>
@@ -40,7 +40,7 @@ import { CommonModule } from '@angular/common';
         </div>
       </mat-dialog-content>
       <mat-dialog-actions>
-        <button mat-button (click)="close()">Cerrar</button>
+        <button mat-button (click)="close()">Ok</button>
       </mat-dialog-actions>
     `,
   })

@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://tu-servidor-api.com",
+      "secure": false
+    }
+  }

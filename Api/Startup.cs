@@ -30,6 +30,16 @@ namespace Api
             services.AddEntityFrameworkSqlServer().AddDbContext<pruebaContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("PruebaConnection")));
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                      .AllowAnyHeader() 
+                      .AllowAnyMethod();
+                });
+            });
+
             services.AddControllers();
             services.AddHttpClient();
         }
@@ -41,6 +51,8 @@ namespace Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors("AllowSpecificOrigin");
 
             app.UseHttpsRedirection();
 
